@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './style.css'
 import { NewTodoForm } from './NewTodoForm'
 import { TodoList } from './TodoList'
 import { useEffect } from 'react'
@@ -29,13 +28,20 @@ export default function App() {
     })
   }
 
+  function editTodo(id, title) {
+    setTodos((currentTodos) =>
+      currentTodos.map((todo) =>
+        todo.id === id ? { ...todo, title } : todo
+      )
+    );
+  }
+
   function toggleTodo(id, completed) {
     setTodos(currentTodos => {
       return currentTodos.map(todo => {
         if (todo.id === id) {
           return { ...todo, completed }
         }
-
         return todo
       })
     })
@@ -50,11 +56,12 @@ export default function App() {
   return (
     <>
       <NewTodoForm addTodo={addTodo} />
-      <h1 className="header">Todo List</h1>
+      <h1>Todo List</h1>
       <TodoList 
         todos={todos} 
         toggleTodo={toggleTodo}  
         deleteTodo={deleteTodo}
+        editTodo={editTodo}
       />
     </>
   )
