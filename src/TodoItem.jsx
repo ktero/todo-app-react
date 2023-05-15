@@ -24,7 +24,7 @@ export function TodoItem({ completed, id, title, toggleTodo, deleteTodo, editTod
                 <form onSubmit={handleEdit}>
                     <input 
                         type="text"
-                        value={title}
+                        placeholder={title}
                         onChange={(e) => setTodoTitle(e.target.value)}
                     />
                     <button type="submit">Submit</button>
