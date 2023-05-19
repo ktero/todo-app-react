@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-export function TodoItem({ completed, id, title, toggleTodo, deleteTodo, editTodo }) {
+export function TodoItem({ completed, id, title, description, toggleTodo, deleteTodo, editTodo }) {
 
     const [isEditing, setIsEditing] = useState(false)
     const [todoTitle, setTodoTitle] = useState(title)
@@ -34,6 +34,7 @@ export function TodoItem({ completed, id, title, toggleTodo, deleteTodo, editTod
                     <>
                         <span style={{ textDecoration: completed ? 'line-through' : 'none' }}  >
                             { title }
+                            { description }
                         </span>
                         <button 
                             onClick={() => deleteTodo(id)}

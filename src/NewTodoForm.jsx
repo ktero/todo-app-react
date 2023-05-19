@@ -4,13 +4,14 @@ import { useState } from "react"
 
 export function NewTodoForm({ addTodo }) {
     const [newItem, setNewItem] = useState("")
+    const [newDescription, setNewDescription] = useState("")
 
     function handleSubmit(e) {
         e.preventDefault()
     
         if (newItem === "") return
 
-        addTodo(newItem)
+        addTodo(newItem, newDescription)
     
         setNewItem("")
     }
@@ -24,6 +25,13 @@ export function NewTodoForm({ addTodo }) {
             onChange={e => setNewItem(e.target.value)}
             type="text" 
             id="item" 
+          />
+          <label htmlFor="description">Add description</label>
+          <input 
+            value={newDescription} 
+            onChange={e => setNewDescription(e.target.value)}
+            type="text" 
+            id="description" 
           />
         </div>
         <button>Add</button>

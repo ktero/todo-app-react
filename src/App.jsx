@@ -15,13 +15,14 @@ export default function App() {
     localStorage.setItem("ITEMS", JSON.stringify(todos))
   }, [todos])
 
-  function addTodo(title) {
+  function addTodo(title, description) {
     setTodos((currentTodos) => {
       return [
         ...currentTodos,
         { 
           id: crypto.randomUUID(), 
           title, 
+          description,
           completed: false
         }
       ]
