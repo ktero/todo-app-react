@@ -6,6 +6,15 @@ A TODO app created using ReactJS that can do the following:
 - Update
 - Delete
 
+## How to try or test app online
+
+This app is currently deployed in both Github pages and Netlify
+
+| Deployments                                              | Status  |
+| :---                                                     | :---    |
+| [Github Pages](https://ktero.github.io/todo-app-react/)  | ✅     |
+| [Netlify](ktero-simple-todo-app.netlify.app)             | ✅     |
+
 ##  How to setup and run in local development environment
 
 ### Setup Project
