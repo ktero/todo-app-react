@@ -6,10 +6,11 @@ export function TodoItem({ completed, id, title, description, toggleTodo, delete
 
     const [isEditing, setIsEditing] = useState(false)
     const [todoTitle, setTodoTitle] = useState(title)
+    const [todoDescription, setTodoDescription] = useState(description)
 
     function handleEdit(e) {
         e.preventDefault()
-        editTodo(id, todoTitle)
+        editTodo(id, todoTitle, todoDescription)
         setIsEditing(false)
     }
 
@@ -27,6 +28,11 @@ export function TodoItem({ completed, id, title, description, toggleTodo, delete
                         placeholder={title}
                         onChange={(e) => setTodoTitle(e.target.value)}
                     />
+                    <input 
+                        type="text"
+                        placeholder={description}
+                        onChange={(e) => setTodoDescription(e.target.value)}
+                    />
                     <button type="submit">Save</button>
                     <button>Cancel</button>
                 </form>
@@ -37,13 +43,13 @@ export function TodoItem({ completed, id, title, description, toggleTodo, delete
                             { description }
                         </span>
                         <button 
+                            onClick={() => setIsEditing(true)}>
+                        Edit
+                        </button>
+                        <button 
                             onClick={() => deleteTodo(id)}
                         >
                         Delete
-                        </button>
-                        <button 
-                            onClick={() => setIsEditing(true)}>
-                        Edit
                         </button>
                     </>
                 )

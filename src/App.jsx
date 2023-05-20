@@ -29,10 +29,10 @@ export default function App() {
     })
   }
 
-  function editTodo(id, title) {
+  function editTodo(id, title, description) {
     setTodos((currentTodos) =>
       currentTodos.map((todo) =>
-        todo.id === id ? { ...todo, title } : todo
+        todo.id === id ? { ...todo, title, description } : todo
       )
     );
   }
