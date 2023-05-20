@@ -14,6 +14,7 @@ export function NewTodoForm({ addTodo }) {
         addTodo(newItem, newDescription)
     
         setNewItem("")
+        setNewDescription("")
     }
 
     return (
