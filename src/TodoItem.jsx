@@ -8,6 +8,11 @@ export function TodoItem({ completed, id, title, description, toggleTodo, delete
     const [todoTitle, setTodoTitle] = useState(title)
     const [todoDescription, setTodoDescription] = useState(description)
 
+    function handleCancel() {
+        setTodoTitle(title)
+        setTodoDescription(description)
+    }
+
     function handleEdit(e) {
         e.preventDefault()
         editTodo(id, todoTitle, todoDescription)
@@ -34,7 +39,7 @@ export function TodoItem({ completed, id, title, description, toggleTodo, delete
                         onChange={(e) => setTodoDescription(e.target.value)}
                     />
                     <button type="submit">Save</button>
-                    <button>Cancel</button>
+                    <button onClick={handleCancel}>Cancel</button>
                 </form>
                 ) : (
                     <>
