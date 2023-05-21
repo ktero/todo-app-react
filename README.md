@@ -6,8 +6,6 @@ A TODO app created using ReactJS that can do the following:
 - Update
 - Delete
 
-## How to try or test app online
-
 This app is currently deployed in both Github pages and Netlify
 
 | Deployments                                              | Status  |
