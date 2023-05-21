@@ -13,7 +13,7 @@ This app is currently deployed in both Github pages and Netlify
 | Deployments                                              | Status  |
 | :---                                                     | :---    |
 | [Github Pages](https://ktero.github.io/todo-app-react/)  | ✅     |
-| [Netlify](ktero-simple-todo-app.netlify.app)             | ✅     |
+| [Netlify](https://ktero-simple-todo-app.netlify.app/)    | ✅     |
 
 ##  How to setup and run in local development environment
 
