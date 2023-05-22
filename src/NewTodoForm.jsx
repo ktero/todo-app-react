@@ -26,16 +26,18 @@ export function NewTodoForm({ addTodo }) {
             onChange={e => setNewItem(e.target.value)}
             type="text" 
             id="item" 
+            data-test="item"
           />
           <label htmlFor="description">Add description</label>
           <input 
             value={newDescription} 
             onChange={e => setNewDescription(e.target.value)}
             type="text" 
-            id="description" 
+            id="description"
+            data-test="description"
           />
         </div>
-        <button>Add</button>
+        <button id="button-add-todo" data-test="button-add-todo">Add</button>
       </form>
     )
 }
