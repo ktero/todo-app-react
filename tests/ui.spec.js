@@ -1,7 +1,6 @@
 // @ts-check
 import { test, expect } from '@playwright/test'
 
-
 test.beforeEach( async ({page}) => {
   await page.goto('http://localhost:5173/')
   await expect(page).toHaveURL(/localhost:5173/)
@@ -10,10 +9,11 @@ test.beforeEach( async ({page}) => {
 test.describe("TODO app", () => {
   
   test("Add TODO item with title and description", async ({page}) => {
-    await expect(page).toHaveURL(/localhost:5173/)
-    await page.getByLabel('New Item').fill('This is the title');
-    await page.getByLabel('Add description').fill('This is the description');
-    await page.getByRole('button', { name: 'Add' }).click();
-    await page.getByText('TitleDescription').click();
+    await page.locator('[data-test="item"]').fill('This is the title')
+    await page.locator('[data-test="description"]').fill('This is the description')
+    await page.locator('[data-test="button-add-todo"]').click()
+
+    await expect(page.locator('[data-test="todo-title"]')).toHaveText('This is the title')
+    await expect(page.locator('[data-test="todo-description"]')).toHaveText('This is the description')
   })
 })
