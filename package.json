@@ -11,7 +11,7 @@
     "deploy": "gh-pages -d build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "pw:test": "npx playwright test --project=chromium"
+    "test": "npx playwright test"
   },
   "dependencies": {
     "react": "^18.2.0",
