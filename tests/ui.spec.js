@@ -2,8 +2,8 @@
 import { test, expect } from '@playwright/test'
 
 test.beforeEach( async ({page}) => {
-  await page.goto('http://localhost:5173/')
-  await expect(page).toHaveURL(/localhost:5173/)
+  await page.goto('http://localhost:3000/')
+  await expect(page).toHaveURL(/localhost:3000/)
 })
 
 test.describe("TODO app", () => {
