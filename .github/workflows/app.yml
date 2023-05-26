@@ -22,15 +22,6 @@ jobs:
 
       - name: Build application
         run: npm run build
-
-      - name: Run localhost for application
-        run: npm run dev
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: built-app
-          path: build
   
   test:
     needs: build
@@ -41,7 +32,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npm run pw:test
+        run: npm run test
         
       - name: Upload playwright report
         uses: actions/upload-artifact@v3
