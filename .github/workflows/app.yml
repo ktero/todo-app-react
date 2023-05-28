@@ -79,3 +79,5 @@ jobs:
 
       - name: Deploy to github pages
         run: npm run deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_PUBLIC_REPO }}
