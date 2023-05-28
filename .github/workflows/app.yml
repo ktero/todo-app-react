@@ -72,6 +72,7 @@ jobs:
   deploy:
     needs: [build, test]
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
 
     steps:
       - name: Download build files
