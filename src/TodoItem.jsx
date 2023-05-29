@@ -42,8 +42,8 @@ export function TodoItem({ completed, id, title, description, toggleTodo, delete
                         id="edit-description"
                         data-test="edit-description"
                     />
-                    <button type="submit">Save</button>
-                    <button onClick={handleCancel}>Cancel</button>
+                    <button type="submit" data-test="button-edit-save">Save</button>
+                    <button onClick={handleCancel} data-test="button-edit-cancel">Cancel</button>
                 </form>
                 ) : (
                     <>
