@@ -70,4 +70,15 @@ test.describe("TODO app", () => {
     await expect(page.locator('[data-test="todo-title"]')).toHaveText('This is the updated title the second')
     await expect(page.locator('[data-test="todo-description"]')).toHaveText('This is the updated description the second')
   })
+
+  test("Should delete TODO item", async ({page}) => {
+    await page.locator('[data-test="item"]').fill('This is the title')
+    await page.locator('[data-test="description"]').fill('This is the description')
+    await page.locator('[data-test="button-add-todo"]').click()
+    await expect(page.locator('[data-test="todo-title"]')).toHaveText('This is the title')
+    await expect(page.locator('[data-test="todo-description"]')).toHaveText('This is the description')
+
+    await page.locator('[data-test="button-delete"]').click()
+    await expect(page.locator('[data-test="todo-list"]')).toHaveText('No Todos')
+  })
 })
