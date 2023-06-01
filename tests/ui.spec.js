@@ -73,4 +73,29 @@ test.describe("TODO app", () => {
     await expect(page.locator('[data-test="todo-description"]')).toHaveText('This is the updated description the second')
     await expect(page.locator('[data-test="todo-counter"]')).toHaveText('Number of TODO items: 1')
   })
+
+  test("Should have line-through in the TODO item after toggling the checkbox", async ({page}) => {
+    await page.locator('[data-test="item"]').fill('This is the title')
+    await page.locator('[data-test="description"]').fill('This is the description')
+    await page.locator('[data-test="button-add-todo"]').click()
+    await expect(page.locator('[data-test="todo-title"]')).toHaveText('This is the title')
+    await expect(page.locator('[data-test="todo-description"]')).toHaveText('This is the description')
+    await expect(page.locator('[data-test="todo-counter"]')).toHaveText('Number of TODO items: 1')
+
+    let textDecoration = ""
+    
+    // Toggle
+    await page.locator('[data-test="todo-checkbox"]').click()
+    textDecoration = await page.$eval('[data-test="todo-item"]', (element) => {
+      return element.style.textDecoration;
+    });
+    expect(textDecoration).toEqual('line-through')
+
+    // Dont toggle
+    await page.locator('[data-test="todo-checkbox"]').click()
+    textDecoration = await page.$eval('[data-test="todo-item"]', (element) => {
+      return element.style.textDecoration;
+    });
+    expect(textDecoration).toEqual('none')
+  })
 })
