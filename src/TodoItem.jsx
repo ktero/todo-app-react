@@ -24,6 +24,7 @@ export function TodoItem({ completed, id, title, description, toggleTodo, delete
             <input 
                 type="checkbox" 
                 checked={completed} 
+                data-test="todo-checkbox"
                 onChange={e => toggleTodo(id, e.target.checked)}
             />
             { isEditing ? (
@@ -47,7 +48,7 @@ export function TodoItem({ completed, id, title, description, toggleTodo, delete
                 </form>
                 ) : (
                     <>
-                        <span style={{ textDecoration: completed ? 'line-through' : 'none' }}  >
+                        <span data-test="todo-item" style={{ textDecoration: completed ? 'line-through' : 'none' }}  >
                             <span data-test="todo-title">{ title }</span>
                             <span data-test="todo-description">{ description }</span>
                         </span>
