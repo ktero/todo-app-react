@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { TodoItem } from "./TodoItem"
+import { TodoItem } from "../TodoItem/TodoItem"
 
 export function TodoList({ todos, toggleTodo, deleteTodo, editTodo }) {
   return (
