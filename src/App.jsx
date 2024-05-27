@@ -3,6 +3,8 @@ import { NewTodoForm } from './Components/NewTodoForm/NewTodoForm'
 import { TodoList } from './Components/TodoList/TodoList'
 import { useEffect } from 'react'
 
+import './App.css'
+
 export default function App() {
 
   const [todos, setTodos] = useState(() => {
@@ -57,7 +59,7 @@ export default function App() {
   return (
     <>
       <NewTodoForm addTodo={addTodo} />
-      <h1>Todo List</h1>
+      <h3>Todo List</h3>
       <TodoList 
         todos={todos} 
         toggleTodo={toggleTodo}  
